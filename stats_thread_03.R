@@ -31,5 +31,9 @@ plot <- ggplot(data, aes(x = Time, y = Value, color = Group)) +
     y = NULL,
     subtitle = "Treatment starts at time t, causing a divergence in the treatment group."
   ) +
-  theme_minimal()
+  theme_minimal()+
+  theme(
+    panel.background = element_rect(fill = "white"),
+    plot.background = element_rect(fill = "white")
+  )
 ggsave("DiD_plot.png", plot, width=6, height=5)
